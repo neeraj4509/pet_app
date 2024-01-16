@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SelectionForm from './components/SelectionForm';
+import DisplayArea from './components/DisplayArea';
 
 function App() {
+  const [petType, setPetType] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Pet Facts and Image</h1>
+      <SelectionForm setPetType={setPetType} />
+      <DisplayArea petType={petType} />
     </div>
   );
 }
